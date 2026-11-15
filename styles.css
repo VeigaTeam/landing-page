@@ -47,6 +47,7 @@ p { margin: 0; }
 }
 
 .icon { width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0; }
+.icon--stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---------- Botões ---------- */
 .btn {
@@ -251,8 +252,11 @@ p { margin: 0; }
 .card__icon svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .card h3 { font-size: 1.7rem; font-weight: 800; margin-bottom: 10px; }
 .card p { color: var(--muted); font-size: 0.95rem; flex: 1; }
-.card__link { margin-top: 22px; font-weight: 600; font-size: 0.9rem; color: var(--white); }
+.card__actions { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.card__link { font-weight: 600; font-size: 0.9rem; color: var(--white); }
 .card__link:hover { color: var(--red); }
+.card__link--wa { font-weight: 500; color: var(--muted); }
+.card__link--wa:hover { color: #25d366; }
 
 /* ---------- Horários (grade de aulas) ---------- */
 .schedule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -272,7 +276,7 @@ p { margin: 0; }
 .combat-note { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(242, 13, 26, 0.2), var(--bg-3) 70%); border: 1px solid rgba(242, 13, 26, 0.4); }
 .combat-note strong { font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.03em; }
 .combat-note p { margin-top: 6px; color: var(--muted); max-width: 60ch; }
-.schedule__cta { margin-top: 32px; text-align: center; }
+.schedule__cta { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
 /* ---------- Depoimentos ---------- */
 .review {
@@ -288,6 +292,16 @@ p { margin: 0; }
 .review p { color: var(--text); font-size: 0.98rem; flex: 1; }
 .review footer { margin-top: 20px; font-weight: 600; color: var(--muted); font-size: 0.9rem; }
 .review footer::before { content: ""; display: inline-block; width: 18px; height: 2px; background: var(--red); margin-right: 10px; vertical-align: middle; }
+
+/* ---------- Chamada final ---------- */
+.cta-band { padding: clamp(56px, 8vw, 88px) 0; text-align: center; background: radial-gradient(ellipse 80% 120% at 50% 0%, rgba(255, 255, 255, 0.14), transparent 60%), linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); }
+.cta-band h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; }
+.cta-band p { margin: 16px auto 0; max-width: 56ch; color: rgba(255, 255, 255, 0.88); font-size: 1.05rem; }
+.cta-band__actions { margin-top: 32px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.cta-band .btn--primary { background: var(--white); color: var(--red-dark); }
+.cta-band .btn--primary:hover { background: #f1f1f1; }
+.cta-band .btn--ghost { border-color: rgba(255, 255, 255, 0.7); color: var(--white); }
+.cta-band .btn--ghost:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--white); }
 
 /* ---------- Localização ---------- */
 .location {
@@ -366,6 +380,7 @@ p { margin: 0; }
   .schedule { grid-template-columns: 1fr; }
   .combat-note { flex-direction: column; align-items: flex-start; }
   .combat-note .btn { width: 100%; }
+  .schedule__cta .btn, .cta-band__actions .btn { width: 100%; }
 }
 
 @media (max-width: 560px) {
