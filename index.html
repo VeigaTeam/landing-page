@@ -38,15 +38,6 @@
       "postalCode": "13140-330",
       "addressCountry": "BR"
     },
-    "openingHoursSpecification": [
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday"], "opens": "19:00", "closes": "23:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "06:00", "closes": "08:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "18:30", "closes": "22:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "06:00", "closes": "08:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "18:30", "closes": "20:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "19:30", "closes": "21:00"},
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "12:00"}
-    ],
     "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "61"}
   }
   </script>
@@ -157,32 +148,80 @@
     </section>
 
     <!-- ===================== HORÁRIOS =====================
-         Para alterar, edite as linhas da tabela abaixo.
-         O atributo data-day (0 = domingo ... 6 = sábado) é usado
-         para destacar o dia de hoje automaticamente.
+         Grade oficial de aulas (flyer da academia). Para alterar,
+         edite os itens <li> de cada dia. O data-day (0 = domingo ...
+         6 = sábado) destaca automaticamente o dia de hoje.
          ==================================================== -->
     <section class="section section--dark" id="horarios">
       <div class="container">
         <header class="section__head">
           <span class="eyebrow">Horários</span>
-          <h2>Quando treinar</h2>
-          <p>Horário de funcionamento do CT. Para a grade de cada modalidade, fale com a gente no WhatsApp.</p>
+          <h2>Grade de aulas</h2>
+          <p>Turmas para todos os níveis, com professores dedicados. A aula experimental é gratuita: agende pelo WhatsApp.</p>
         </header>
 
-        <div class="hours">
-          <table class="hours__table">
-            <tbody>
-              <tr data-day="1"><th scope="row">Segunda</th><td>19:00 – 23:00</td></tr>
-              <tr data-day="2"><th scope="row">Terça</th><td>06:00 – 08:00 <span class="sep">e</span> 18:30 – 22:00</td></tr>
-              <tr data-day="3"><th scope="row">Quarta</th><td>19:00 – 23:00</td></tr>
-              <tr data-day="4"><th scope="row">Quinta</th><td>06:00 – 08:00 <span class="sep">e</span> 18:30 – 20:00</td></tr>
-              <tr data-day="5"><th scope="row">Sexta</th><td>19:30 – 21:00</td></tr>
-              <tr data-day="6"><th scope="row">Sábado</th><td>10:00 – 12:00</td></tr>
-              <tr data-day="0" class="is-closed"><th scope="row">Domingo</th><td>Fechado</td></tr>
-            </tbody>
-          </table>
-          <p class="hours__note">Os horários podem mudar em feriados. Confirme pelo WhatsApp.</p>
+        <div class="schedule">
+        <article class="day" data-day="1">
+          <h3 class="day__name">Segunda</h3>
+          <ul class="day__list">
+            <li><time>19:00</time><span class="lesson">Muay Thai</span><span class="teacher">Rodrigo Veiga</span></li>
+            <li><time>20:00</time><span class="lesson">Muay Thai Kids</span><span class="teacher">Rodrigo Veiga</span></li>
+            <li><time>21:00</time><span class="lesson">Jiu-Jitsu</span><span class="teacher">Joás Henrique</span></li>
+          </ul>
+        </article>
+        <article class="day" data-day="2">
+          <h3 class="day__name">Terça</h3>
+          <ul class="day__list">
+            <li><time>06:00</time><span class="lesson">Jiu-Jitsu</span><span class="teacher">Carioca</span></li>
+            <li><time>18:30</time><span class="lesson">Muay Thai</span><span class="teacher">Rodrigo Veiga</span></li>
+            <li><time>20:30</time><span class="lesson">Judô</span><span class="teacher">Bianca Lara</span></li>
+          </ul>
+        </article>
+        <article class="day" data-day="3">
+          <h3 class="day__name">Quarta</h3>
+          <ul class="day__list">
+            <li><time>19:00</time><span class="lesson">Muay Thai Kids</span><span class="teacher">Rodrigo Veiga</span></li>
+            <li><time>20:00</time><span class="lesson">Muay Thai</span><span class="teacher">Rodrigo Veiga</span></li>
+            <li><time>21:00</time><span class="lesson">Jiu-Jitsu</span><span class="teacher">Joás Henrique</span></li>
+          </ul>
+        </article>
+        <article class="day" data-day="4">
+          <h3 class="day__name">Quinta</h3>
+          <ul class="day__list">
+            <li><time>06:00</time><span class="lesson">Jiu-Jitsu</span><span class="teacher">Carioca</span></li>
+            <li><time>18:30</time><span class="lesson">Muay Thai</span><span class="teacher">Rodrigo Veiga</span></li>
+            <li><time>20:30</time><span class="lesson">Judô</span><span class="teacher">Bianca Lara</span></li>
+          </ul>
+        </article>
+        <article class="day" data-day="5">
+          <h3 class="day__name">Sexta</h3>
+          <ul class="day__list">
+            <li class="is-special"><time>19:00</time><span class="lesson">Combat Session <span class="tag">datas variáveis</span></span><span class="teacher">Datas definidas pela academia a cada mês</span></li>
+            <li><time>19:30</time><span class="lesson">No-Gi BJJ</span><span class="teacher">Joás Henrique</span></li>
+          </ul>
+        </article>
+        <article class="day" data-day="6">
+          <h3 class="day__name">Sábado</h3>
+          <ul class="day__list">
+            <li><time>08:00</time><span class="lesson">No-Gi BJJ</span><span class="teacher">Carioca</span></li>
+            <li><time>10:00</time><span class="lesson">Muay Thai</span><span class="teacher">Rodrigo Veiga</span></li>
+          </ul>
+        </article>
         </div>
+
+        <!-- COMBAT SESSION: as datas mudam todo mês. Para listar as datas do mês,
+             troque o texto do parágrafo abaixo (ex.: "Neste mês: 6, 13 e 27"). -->
+        <div class="combat-note">
+          <div>
+            <strong>Combat Session · sextas, às 19h</strong>
+            <p>Treino especial que mistura Muay Thai e Jiu-Jitsu. As datas são definidas pela academia a cada mês: consulte as próximas pelo WhatsApp.</p>
+          </div>
+          <a class="btn btn--primary" href="https://wa.me/5519993927371?text=Ol%C3%A1!%20Quero%20saber%20as%20pr%C3%B3ximas%20datas%20da%20Combat%20Session%20(sexta%2C%2019h)." target="_blank" rel="noopener">Ver datas do mês</a>
+        </div>
+
+        <p class="schedule__cta">
+          <a class="btn btn--ghost" href="https://wa.me/5519993927371?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20gratuita%20no%20CT%20Veiga%20Team." target="_blank" rel="noopener">Agendar aula experimental gratuita</a>
+        </p>
       </div>
     </section>
 

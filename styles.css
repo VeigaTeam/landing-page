@@ -254,26 +254,25 @@ p { margin: 0; }
 .card__link { margin-top: 22px; font-weight: 600; font-size: 0.9rem; color: var(--white); }
 .card__link:hover { color: var(--red); }
 
-/* ---------- Horários ---------- */
-.hours { max-width: 640px; }
-.hours__table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--bg-3);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.hours__table tr { border-bottom: 1px solid var(--line); }
-.hours__table tr:last-child { border-bottom: 0; }
-.hours__table th, .hours__table td { padding: 16px 20px; text-align: left; }
-.hours__table th { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; width: 40%; }
-.hours__table td { color: var(--text); font-variant-numeric: tabular-nums; }
-.hours__table .sep { color: var(--muted); margin: 0 6px; font-size: 0.85em; }
-.hours__table .is-closed td { color: var(--muted); }
-.hours__table tr.is-today { background: rgba(242, 13, 26, 0.12); box-shadow: inset 4px 0 0 var(--red); }
-.hours__table tr.is-today th::after { content: "hoje"; margin-left: 10px; font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; color: var(--red); letter-spacing: 0.1em; vertical-align: middle; }
-.hours__note { margin-top: 16px; color: var(--muted); font-size: 0.9rem; }
+/* ---------- Horários (grade de aulas) ---------- */
+.schedule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.day { background: var(--bg-3); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; }
+.day__name { background: var(--red); color: var(--white); font-size: 1.5rem; font-weight: 800; letter-spacing: 0.03em; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+.day__list { list-style: none; margin: 0; padding: 0; }
+.day__list li { display: grid; grid-template-columns: 70px 1fr; column-gap: 12px; align-items: baseline; padding: 14px 20px; border-top: 1px solid var(--line); }
+.day__list li:first-child { border-top: 0; }
+.day__list time { grid-row: span 2; font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; line-height: 1; color: var(--white); font-variant-numeric: tabular-nums; }
+.lesson { font-weight: 600; color: var(--text); }
+.teacher { color: var(--muted); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tag { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); color: var(--white); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; vertical-align: middle; }
+.day__list li.is-special { background: rgba(242, 13, 26, 0.14); box-shadow: inset 4px 0 0 var(--red); }
+.day__list li.is-special .tag { background: var(--red); }
+.day.is-today { border-color: var(--red); }
+.day.is-today .day__name::after { content: "hoje"; font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--white); color: var(--red); padding: 2px 10px; border-radius: 999px; }
+.combat-note { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(242, 13, 26, 0.2), var(--bg-3) 70%); border: 1px solid rgba(242, 13, 26, 0.4); }
+.combat-note strong { font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.combat-note p { margin-top: 6px; color: var(--muted); max-width: 60ch; }
+.schedule__cta { margin-top: 32px; text-align: center; }
 
 /* ---------- Depoimentos ---------- */
 .review {
@@ -339,6 +338,7 @@ p { margin: 0; }
   .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .grid--3 { grid-template-columns: 1fr; max-width: 640px; }
   .location { grid-template-columns: 1fr; }
+  .schedule { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 760px) {
@@ -360,15 +360,17 @@ p { margin: 0; }
   .nav a:not(.btn) { padding: 14px 4px; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
   .nav .btn { margin-top: 16px; }
   .hero__facts { gap: 10px 28px; }
-  .hours__table th, .hours__table td { padding: 14px 14px; }
-  .hours__table th { font-size: 1.1rem; }
+}
+
+@media (max-width: 640px) {
+  .schedule { grid-template-columns: 1fr; }
+  .combat-note { flex-direction: column; align-items: flex-start; }
+  .combat-note .btn { width: 100%; }
 }
 
 @media (max-width: 560px) {
   .grid--4 { grid-template-columns: 1fr; }
   .hero__actions .btn { width: 100%; }
-  .hours__table td { font-size: 0.95rem; }
-  .hours__table .sep { display: block; margin: 2px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -13,7 +13,7 @@ Site de uma página da academia de artes marciais CT Veiga Team (Paulínia/SP). 
 ## Como editar
 
 - **WhatsApp:** procure por `wa.me/5519993927371` no `index.html` e troque o número (55 + DDD + número).
-- **Horários:** edite as linhas da tabela na seção `#horarios`. O `data-day` (0 = domingo … 6 = sábado) serve para destacar o dia de hoje.
+- **Horários:** edite os itens `<li>` de cada dia na seção `#horarios` (hora, aula e professor). O `data-day` (0 = domingo … 6 = sábado) destaca o dia de hoje. As datas da Combat Session mudam todo mês: o texto fica no bloco `combat-note`, logo abaixo da grade.
 - **Modalidades e depoimentos:** cada card é um bloco `<article>` ou `<blockquote>` na seção correspondente.
 - **Cores:** variáveis `--bg`, `--red`, `--text` no topo do `styles.css`.
 

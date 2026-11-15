@@ -17,10 +17,10 @@
     });
   }
 
-  // Destaca o dia de hoje na tabela de horários
+  // Destaca o dia de hoje na grade de aulas
   var today = new Date().getDay(); // 0 = domingo ... 6 = sábado
-  var row = document.querySelector('.hours__table tr[data-day="' + today + '"]');
-  if (row) row.classList.add('is-today');
+  var card = document.querySelector('.day[data-day="' + today + '"]');
+  if (card) card.classList.add('is-today');
 
   // Ano no rodapé
   var ano = document.getElementById('ano');
