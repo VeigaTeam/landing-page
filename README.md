@@ -9,6 +9,7 @@ Site de uma página da academia de artes marciais CT Veiga Team (Paulínia/SP). 
 - `script.js` — menu mobile, destaque do dia atual nos horários, ano no rodapé
 - `assets/logo.jpg` — logo usado no site; `assets/logo-original.jpg` é o arquivo original em alta resolução
 - `assets/favicon.png` — ícone da aba
+- `robots.txt` e `sitemap.xml` — rastreamento pelo Google; o endereço oficial é `https://veigateam.com.br/` (se o domínio mudar, atualize esses dois arquivos e as URLs no `<head>` do `index.html`)
 
 ## Como editar
 
